@@ -38,30 +38,33 @@ console.log(modelFilter('Galaxy M52'))
  * @returns {*}
  */
 const memoryFilter = (memory) => {
-  const newArray = goods.filter((item) => item.memory === memory)
+  console.log(memory)
+  const newArray = goods.filter((item) => Number(item.memory) === Number(memory))
   return newArray
 };
 
+console.log(memoryFilter('128'))
 
 /**
  * @param {number} price
  * @returns {*}
  */
 const priceFilter = (price) => {
-  const newArray = goods.filter((item) => item.memory === memory)
+  const newArray = goods.filter((item) => Number(item.price) === Number(price))
   return newArray
 };
-
+console.log(priceFilter('8499'))
 
 /**
  * @param {string} country
  * @returns {*}
  */
 const countryFilter = (country) => {
-  const newArray = goods.filter((item) => item.country === country)
+  console.log(country)
+  const newArray = goods.filter((item) => String(item.country) === String(country))
   return newArray
 };
-
+console.log(countryFilter('Korea'))
 
 /**
  * @param {string} os
