@@ -51,9 +51,9 @@ console.log(memoryFilter('128'))
  */
 const priceFilter = (price) => {
   const newArray = goods.filter((item) => Number(item.price) === Number(price))
-  return newArray
+  return console.log(newArray)
 };
-console.log(priceFilter('8499'))
+console.log(priceFilter('6499'))
 
 /**
  * @param {string} country
@@ -80,7 +80,7 @@ const osFilter = (os) => {
  * @param {number} to
  */
 const rangeFilter = (from, to) => {
-  const newArray = goods.filter((item) => item.price >= from && item.price <= to)
+  const newArray = goods.filter((item) => item.price <= to && item.price >= from)
   return newArray
 };
 
