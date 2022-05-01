@@ -76,9 +76,10 @@ const rangeFilter = (from, to) => {
 const minPriceReducer = () => {
   const minPrice = goods.reduce((accumulator, current) => {
     return Math.min(accumulator, current.price)
-  }, 6499);
+  }, 12999);
   return minPrice
 };
+
 
 const maxPriceReducer = () => {
   const maxPrice = goods.reduce((accumulator, current) => {
