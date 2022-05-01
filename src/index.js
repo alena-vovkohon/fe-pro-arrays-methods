@@ -27,7 +27,11 @@ console.log(colorFilter('white'))
  * @returns {*}
  */
 const modelFilter = (model) => {
-  const newArray = goods.filter((item) => item.model === model)
+  // console.log(model)
+  const newArray = goods.filter((item) => {
+    // console.log(item.model)
+      return(item.model === model)
+  })
   return newArray
 };
 
@@ -38,8 +42,8 @@ console.log(modelFilter('Galaxy M52'))
  * @returns {*}
  */
 const memoryFilter = (memory) => {
-  console.log(memory)
-  const newArray = goods.filter((item) => Number(item.memory) === Number(memory))
+  // console.log(Number(memory))
+  const newArray = goods.filter((item) => (item.memory === Number(memory)))
   return newArray
 };
 
@@ -50,8 +54,14 @@ console.log(memoryFilter('128'))
  * @returns {*}
  */
 const priceFilter = (price) => {
-  const newArray = goods.filter((item) => Number(item.price) === Number(price))
-  return console.log(newArray)
+  // console.log(Number(price))
+  // const newArray = goods.filter((item) => item.price === Number(price))
+
+  const newArray = goods.filter((item) => {
+    // console.log(item.price)
+    return (item.price === Number(price))
+  })
+  return newArray
 };
 console.log(priceFilter('6499'))
 
@@ -61,7 +71,10 @@ console.log(priceFilter('6499'))
  */
 const countryFilter = (country) => {
   console.log(country)
-  const newArray = goods.filter((item) => String(item.country) === String(country))
+  const newArray = goods.filter((item) => {
+    console.log(item.country)
+    return (item.country === country)
+  })
   return newArray
 };
 console.log(countryFilter('Korea'))
@@ -71,16 +84,22 @@ console.log(countryFilter('Korea'))
  * @returns {*}
  */
 const osFilter = (os) => {
-  const newArray = goods.filter((item) => item.os === os)
+  // const newArray = goods.filter((item) => item.os === os)
+  console.log(os)
+  const newArray = goods.filter((item) => {
+    console.log(item.os)
+    return (item.os === os)
+  })
   return newArray
 };
+console.log(osFilter('iOs'))
 
 /**
  * @param {number} from
  * @param {number} to
  */
 const rangeFilter = (from, to) => {
-  const newArray = goods.filter((item) => item.price <= to && item.price >= from)
+  const newArray = goods.filter((item) => item.price <= Number(to) && item.price >= Number(from))
   return newArray
 };
 
