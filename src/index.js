@@ -87,8 +87,6 @@ const rangeFilter = (from, to) => {
 console.log(rangeFilter(8000, 20000))
 
 const minPriceReducer = () => {
-
-
   const minPrice = goods.reduce((accumulator, current) => {
     return Math.min(accumulator, current.price)
   }, 6499);
@@ -106,7 +104,6 @@ const maxPriceReducer = () => {
 console.log(maxPriceReducer())
 
 const toMaxSorter = () => {
- 
   const newArray = goods.sort((a, b) => {
     if (a.price < b.price) return 1
     if (a.price > b.price) return -1
